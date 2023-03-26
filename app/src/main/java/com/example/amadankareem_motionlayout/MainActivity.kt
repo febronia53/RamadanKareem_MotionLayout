@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mediaPlayer = MediaPlayer.create(this, R.raw.ramdan_kareem)
-       // mediaPlayer?.run { start() }
+        mediaPlayer?.run { start() }
     }
 }
