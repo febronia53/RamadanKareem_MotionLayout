@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="3500">
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:motionTarget="@+id/characters"
+                motion:framePosition="50"
+                android:alpha="0.2" />
+            <KeyAttribute
+                motion:motionTarget="@+id/characters"
+                motion:framePosition="20"
+                android:alpha="0.5" />
+            <KeyAttribute
+                motion:motionTarget="@+id/ramadanKarem"
+                motion:framePosition="30"
+                android:rotation="360" />
+        </KeyFrameSet>
+
+        <OnClick motion:touchAnchorId="@+id/ramadanKarem" />
+    </Transition>
+
+
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ramadanKarem"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            motion:layout_constraintBottom_toTopOf="@+id/characters"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"/>
+        <Constraint
+            android:id="@+id/characters"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/ramadanKarem"
+            android:layout_marginTop="250dp"
+            android:visibility="gone"/>
+
+        <Constraint
+            android:id="@+id/phanose"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="-380dp"
+            />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintVertical_bias="0.59000003"
+            android:layout_marginBottom="0dp"
+            android:id="@+id/man" />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ramadanKarem"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            motion:layout_constraintBottom_toTopOf="@+id/characters"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintVertical_bias="0.74"
+            android:layout_marginTop="32dp"/>
+        <Constraint
+            android:id="@+id/characters"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintVertical_bias="0.59000003"
+            android:layout_marginBottom="-40dp"/>
+        <Constraint
+            android:id="@+id/man"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            android:layout_marginBottom="-300dp"
+            />
+        <Constraint
+            android:id="@+id/phanose"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="-380dp"
+            android:layout_marginBottom="16dp"
+            />
+    </ConstraintSet>
+        </MotionScene>
